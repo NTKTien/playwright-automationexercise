@@ -29,7 +29,7 @@ def load_excel_data(file_path: str, sheet_name: str) -> List[Dict[str, Any]]:
             
         row_dict = {header[i]: row[i] for i in range(min(len(header), len(row)))}
         
-        # Chỉ chạy case nào có cột Enabled là Y
+        # Only run cases where the Enabled column is 'Y'
         enabled_val = str(row_dict.get("Enabled", "")).strip().upper()
         if enabled_val != "Y":
             continue

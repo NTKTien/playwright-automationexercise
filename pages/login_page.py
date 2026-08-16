@@ -9,12 +9,12 @@ class LoginPage(BasePage):
         self.click(LoginLocators.LOGIN_BUTTON)
 
     def verify_login_success(self):
-        """Xác minh đăng nhập thành công bằng cách kiểm tra Header"""
+        """Verify login success by checking the header"""
         locator = self.page.locator(LoginLocators.LOGGED_IN_TEXT)
         expect(locator).to_be_visible(timeout=5000)
 
     def get_login_error(self):
-        """Lấy thông báo lỗi màu đỏ ngay lập tức (Fast Fail)"""
+        """Get the red error message immediately (Fast Fail)"""
         error_locator = self.page.locator(LoginLocators.ERROR_MESSAGE).first
         try:
             if error_locator.is_visible(timeout=1500):
@@ -24,6 +24,6 @@ class LoginPage(BasePage):
         return None
 
     def get_html5_validation_error(self):
-        """Bắt lỗi tooltip HTML5 nếu để trống các trường"""
+        """Get the HTML5 tooltip error if any fields are left empty"""
         error_msg = self.page.evaluate("() => document.activeElement.validationMessage")
         return error_msg if error_msg else None

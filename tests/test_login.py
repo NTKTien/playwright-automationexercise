@@ -11,45 +11,43 @@ login_cases = load_excel_data(DATA_FILE, "LoginData")
 @pytest.mark.parametrize("case", login_cases)
 def test_login_flow(driver_setup, request, case):
     request.node.test_id = case.get("TestCaseID", "LoginTest")
-    logger.info(f"--- Bắt đầu test: {request.node.test_id} ---")
+    logger.info(f"--- Starting test: {request.node.test_id} ---")
     
     page = driver_setup["page"]
     login_page = LoginPage(page)
     expected_result = str(case.get("ExpectedResult")).strip().upper()
     
-    # 1. Khởi tạo truy cập
+    # 1. Initialize access
     login_page.navigate("/login")
-    
-    # Lấy đúng tên cột trong Excel theo ảnh của bạn: "Email Address" và "Password"
     email = case.get("Email Address")
     password = case.get("Password")
     
-    # 2. Thực hiện Đăng nhập
+    # 2. Perform Login
     login_page.perform_login(email, password)
     
-    # 3. Phân tích kết quả
+    # 3. Analyze results
     system_error = login_page.get_login_error()
     html5_error = login_page.get_html5_validation_error()
     
     if system_error or html5_error:
         error_msg = system_error or html5_error
-        logger.info(f"Bắt được lỗi login: '{error_msg}'")
+        logger.info(f"Found login error: '{error_msg}'")
         if expected_result == "FAIL":
-            assert True, f"Pass đúng kỳ vọng FAIL với lỗi: {error_msg}"
+            assert True, f"Pass expected FAIL with error: {error_msg}"
         else:
-            pytest.fail(f"Kỳ vọng SUCCESS nhưng gặp lỗi: '{error_msg}'")
+            pytest.fail(f"Expected SUCCESS but encountered error: '{error_msg}'")
             
     else:
         if expected_result == "SUCCESS":
             try:
                 login_page.verify_login_success()
-                logger.info("Đăng nhập thành công, đã tìm thấy Logged in as trên header.")
+                logger.info("Login successful, found 'Logged in as' message in the header.")
             except AssertionError as e:
-                pytest.fail(f"Không thấy thông báo thành công: {str(e)}")
+                pytest.fail(f"Success message not found: {str(e)}")
         else:
             try:
-                # Nếu kỳ vọng Fail nhưng lại login được
+                # If expecting FAIL but login is successful
                 login_page.verify_login_success()
-                pytest.fail("Kỳ vọng FAIL nhưng tài khoản lại login thành công.")
+                pytest.fail("Expected FAIL but the account logged in successfully.")
             except AssertionError:
-                logger.info("Không login được đúng như kỳ vọng (FAIL).")
+                logger.info("Failed to login as expected (FAIL).")

@@ -12,7 +12,7 @@ class BasePage:
         self.page.click(selector)
 
     def fill(self, selector: str, text: str):
-        # Nếu text là None, ép về chuỗi rỗng ("") để Playwright xóa sạch data auto-fill.
-        # Nếu là số 0 (người dùng cố tình điền 0), vẫn giữ nguyên "0".
+        # If text is None, set it to an empty string to clear the input.
+        # If it's the number 0 (int), keep it as "0".
         val = "" if text is None else str(text)
         self.page.fill(selector, val)

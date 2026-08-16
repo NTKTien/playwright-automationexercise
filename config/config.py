@@ -3,8 +3,8 @@ import os
 ENV = os.getenv("TEST_ENV", "prod").lower()
 
 ENV_URLS = {
-    "local": "http://localhost:3000",
-    "staging": "https://staging.automationexercise.com",
+    "local": "",
+    "staging": "",
     "prod": "https://automationexercise.com"
 }
 

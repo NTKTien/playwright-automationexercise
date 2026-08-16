@@ -4,48 +4,48 @@ from locators.search_locators import SearchLocators
 
 class SearchPage(BasePage):
     def navigate_to_products(self):
-        """Điều hướng sang trang Products và chờ ô tìm kiếm xuất hiện"""
+        """Navigate to the Products page and wait for the search input to appear"""
         self.click(SearchLocators.PRODUCTS_LINK)
         expect(self.page.locator(SearchLocators.SEARCH_INPUT)).to_be_visible(timeout=5000)
 
     def search_for(self, keyword):
-        """Thực hiện tìm kiếm với thao tác Clear trước khi Fill"""
+        """Perform a search with a clear operation before filling"""
         self.page.locator(SearchLocators.SEARCH_INPUT).clear()
         self.fill(SearchLocators.SEARCH_INPUT, keyword)
         self.click(SearchLocators.SEARCH_BUTTON)
 
     def verify_products_found(self, is_found: bool, expected_header: str, keyword: str):
         """
-        Xác minh kết quả hiển thị của sản phẩm dựa trên Expected Header.
-        Kiểm tra thêm việc từ khóa có nằm trong tên sản phẩm trả về hay không.
+        Verify the search results based on the expected header.
+        Check additionally if the keyword is present in the returned product names.
         """
-        # 1. Xác minh Header
+        # 1. Verify Header
         header_locator = self.page.locator(f"text={expected_header}")
         expect(header_locator).to_be_visible(timeout=5000)
         
         product_list = self.page.locator(SearchLocators.PRODUCT_NAMES)
         
         if is_found:
-            # === KỲ VỌNG TÌM THẤY SẢN PHẨM ===
+            # === EXPECTED: FOUND PRODUCTS ===
             try:
-                # Chờ hiển thị ít nhất 1 sản phẩm
+                # Wait for at least 1 product to be visible
                 expect(product_list.first).to_be_visible(timeout=3000)
             except AssertionError:
-                # Ném lỗi với thông báo rõ ràng để test báo Fail đúng lý do
-                raise AssertionError(f"Hệ thống không trả về bất kỳ sản phẩm nào cho từ khóa '{keyword}'.")
+                # Throw an error with a clear message for the test to report Fail correctly
+                raise AssertionError(f"System did not return any products for the keyword '{keyword}'.")
 
             count = product_list.count()
             
-            # YÊU CẦU: Nếu không phải "All Products" -> Phải kiểm tra tên sản phẩm
+            # EXPECTED: If it's not "All Products" -> Must check product names
             if expected_header != "All Products" and keyword:
-                # Để dễ dàng so sánh, ta chuyển từ khóa về chữ thường và cắt khoảng trắng thừa
-                # Lý do: Trên giao diện web, khoảng trắng dư thừa thường bị HTML ẩn đi.
+                # To make comparison easier, convert the keyword to lowercase and trim whitespace
+                # Reason: On the web interface, extra whitespace is often hidden by HTML.
                 clean_keyword = keyword.strip().lower()
                 
-                # Biến cờ: Chỉ cần có ít nhất 1 sản phẩm chứa từ khóa là đạt yêu cầu
+                # Flag: Just need at least 1 product containing the keyword to meet the requirement
                 keyword_matched = False
                 
-                # Quét tên của tối đa 5 sản phẩm đầu tiên (để tối ưu tốc độ)
+                # Scan the names of up to 5 products (for performance optimization)
                 check_limit = min(5, count)
                 for i in range(check_limit):
                     product_name = product_list.nth(i).inner_text().lower()
@@ -54,11 +54,11 @@ class SearchPage(BasePage):
                         break
                         
                 if not keyword_matched:
-                    raise AssertionError(f"Tìm thấy {count} sản phẩm, nhưng không có sản phẩm nào chứa từ khóa '{clean_keyword}'.")
+                    raise AssertionError(f"Found {count} products, but none contain the keyword '{clean_keyword}'.")
                     
         else:
-            # === KỲ VỌNG KHÔNG TÌM THẤY SẢN PHẨM NÀO ===
+            # === EXPECTED: NOT FOUND ANY PRODUCTS ===
             self.page.wait_for_timeout(1000) 
             count = product_list.count()
             if count > 0:
-                raise AssertionError(f"Kỳ vọng KHÔNG tìm thấy sản phẩm, nhưng lại hiển thị {count} sản phẩm.")
+                raise AssertionError(f"Expected NO products, but {count} products were displayed.")

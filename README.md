@@ -28,11 +28,14 @@ playwright-automationexercise/
 │   ├── login_locators.py     # UI selectors for Authentication pages
 │   ├── register_locators.py  # UI selectors for Signup pages
 │   └── search_locators.py    # UI selectors for Search pages
+├── logs/                     # Directory for auto-generated execution logs
 ├── pages/
 │   ├── base_page.py          # Base wrapper for Playwright actions
 │   ├── login_page.py         # Page Object for Login interactions
 │   ├── register_page.py      # Page Object for Registration workflows
 │   └── search_page.py        # Page Object for Product search
+├── reports/                  # Directory for auto-generated HTML test reports
+├── screenshots/              # Directory for auto-captured full-page screenshots on failure
 ├── tests/
 │   ├── test_login.py         # Test scenarios for User Login
 │   ├── test_register.py      # Test scenarios for User Registration

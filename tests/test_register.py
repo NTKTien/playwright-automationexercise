@@ -19,7 +19,7 @@ def test_register_flow(driver_setup, request, case):
     expected_result = str(case.get("ExpectedResult")).strip().upper()
     
     # =======================================================
-    # BƯỚC 1: XỬ LÝ FORM LOGIN/SIGNUP BAN ĐẦU
+    # STEP 1: PROCESS INITIAL LOGIN/SIGNUP FORM
     # =======================================================
     register_page.navigate("/login")
     register_page.fill_initial_signup(case.get("SignupName"), case.get("SignupEmailAddress"))
@@ -29,45 +29,45 @@ def test_register_flow(driver_setup, request, case):
     
     if system_error or html5_error:
         error_msg = system_error or html5_error
-        logger.info(f"Bắt được lỗi ở bước 1: '{error_msg}'")
+        logger.info(f"Found error in step 1: '{error_msg}'")
         if expected_result == "FAIL":
-            assert True, f"Pass đúng kỳ vọng FAIL với lỗi: {error_msg}"
+            assert True, f"Pass expected FAIL with error: {error_msg}"
             return
         else:
-            pytest.fail(f"Kỳ vọng SUCCESS nhưng gặp lỗi: '{error_msg}'")
+            pytest.fail(f"Expected SUCCESS but encountered error: '{error_msg}'")
 
     # =======================================================
-    # BƯỚC 2: ĐIỀN THÔNG TIN TÀI KHOẢN CHI TIẾT
+    # STEP 2: FILL IN ACCOUNT DETAILS
     # =======================================================
     try:
         register_page.fill_account_details(case)
     except Exception as e:
         if expected_result == "FAIL":
-            logger.info("Không thể điền form (Pass đúng kỳ vọng FAIL).")
+            logger.info("Failed to fill the form (Pass expected FAIL).")
             return
         else:
-            pytest.fail(f"Lỗi khi điền thông tin Account Details: {str(e)}")
+            pytest.fail(f"Error occurred while filling Account Details: {str(e)}")
 
     form_error = register_page.get_html5_validation_error()
     if form_error:
-        logger.info(f"Bắt được lỗi validation form: '{form_error}'")
+        logger.info(f"Found validation error in form: '{form_error}'")
         if expected_result == "FAIL":
             assert True
             return
         else:
-            pytest.fail(f"Kỳ vọng SUCCESS nhưng form báo lỗi: '{form_error}'")
+            pytest.fail(f"Expected SUCCESS but form reported error: '{form_error}'")
 
     # =======================================================
-    # BƯỚC 3: XÁC NHẬN KẾT QUẢ & LUÔN DỌN DẸP (TEARDOWN)
+    # STEP 3: CONFIRM RESULT & ALWAYS CLEAN UP (TEARDOWN)
     # =======================================================
     is_created = page.locator(RegisterLocators.ACCOUNT_CREATED_MSG).is_visible(timeout=3000)
 
     if is_created:
-        # Nhấn Continue để vào trang chủ (nơi chứa nút Delete Account)
+        # Press Continue to go to the home page
         register_page.click(RegisterLocators.CONTINUE_BTN)
         expected_name = case.get("AccountName") or case.get("SignupName")
         
-        # Nếu test case thuộc luồng SUCCESS, tiến hành verify Header
+        # If test case belongs to the SUCCESS flow, proceed to verify Header
         verify_error = None
         if expected_result == "SUCCESS":
             try:
@@ -75,24 +75,24 @@ def test_register_flow(driver_setup, request, case):
             except Exception as e:
                 verify_error = e
                 
-        # LUÔN LUÔN DỌN DẸP TÀI KHOẢN (Bất kể kỳ vọng ban đầu là gì)
+        # CLEAN UP ACCOUNT
         try:
             register_page.delete_account()
-            logger.info(f"Đã tự động dọn dẹp: Xóa tài khoản '{expected_name}' thành công.")
+            logger.info(f"Automatically cleaned up: Account '{expected_name}' deleted successfully.")
         except Exception as e:
-            logger.error(f"Không thể xóa tài khoản để dọn dẹp: {e}")
+            logger.error(f"Failed to delete account for cleanup: {e}")
             
-        # Phán quyết (Assertion) Test Case sau khi đã dọn dẹp
+        # Assertion about the Test Case after cleanup
         if expected_result == "FAIL":
-            pytest.fail("Bug Hệ Thống: Kỳ vọng FAIL nhưng tài khoản lại được tạo thành công (Đã tự động xóa tài khoản này).")
+            pytest.fail("System Bug: Expected FAIL but the account was created successfully (Account automatically deleted).")
         elif verify_error:
-            pytest.fail(f"Tạo tài khoản thành công nhưng lỗi hiển thị Header: {verify_error}")
+            pytest.fail(f"Account created successfully but error occurred while displaying Header: {verify_error}")
         else:
-            logger.info("Đăng ký thành công và hiển thị tên đầy đủ trên header.")
+            logger.info("Registration successful and full name displayed in the header.")
 
     else:
-        # Tài khoản không được tạo
+        # Account not created
         if expected_result == "SUCCESS":
-            pytest.fail("Kỳ vọng SUCCESS nhưng tài khoản không được tạo.")
+            pytest.fail("Expected SUCCESS but the account was not created.")
         else:
-            logger.info("Pass: Hệ thống chặn tạo tài khoản đúng kỳ vọng (FAIL).")
+            logger.info("Pass: Systems blocks account creation as expected (FAIL).")

@@ -7,16 +7,14 @@ class RegisterPage(BasePage):
         self.fill(RegisterLocators.SIGNUP_NAME, name)
         self.fill(RegisterLocators.SIGNUP_EMAIL, email)
         self.click(RegisterLocators.SIGNUP_BUTTON)
-        # Đã gỡ bỏ wait_for_url ở đây để không bị giam thời gian vô ích ở các case Fail
 
     def get_system_error(self):
-        """Bắt thông báo lỗi do server trả về (VD: Trùng email) với tốc độ nhanh nhất"""
-        # Tìm chính xác thẻ p chứa đoạn text lỗi.
-        # Dùng .filter(has_text=...) giúp vượt qua lỗi Strict Mode một cách triệt để.
+        """Get the system error message returned by the server (e.g., duplicate email) with the fastest speed"""
+        # Find the exact p tag containing the error text.
+        # Using .filter(has_text=...) helps bypass Strict Mode errors completely.
         error_locator = self.page.locator("p").filter(has_text="already exist")
         
         try:
-            # Chỉ chờ tối đa 1.5 giây để xem lỗi có văng ra không (Fast Fail)
             if error_locator.is_visible(timeout=1500):
                 return error_locator.inner_text()
         except Exception:
@@ -25,16 +23,16 @@ class RegisterPage(BasePage):
         return None
 
     def get_html5_validation_error(self):
-        """Bắt lỗi tooltip khi bỏ trống ô nhập liệu"""
+        """Get the HTML5 tooltip error if any fields are left empty"""
         error_msg = self.page.evaluate("() => document.activeElement.validationMessage")
         return error_msg if error_msg else None
 
     def fill_account_details(self, data: dict):
-        # Chờ form xuất hiện. Nếu đến được đây tức là đã qua bước 1 an toàn.
+        # Wait for the form to appear. If we reach here, the first step is complete.
         self.page.wait_for_selector(RegisterLocators.CREATE_ACCOUNT_BTN)
         self.click(RegisterLocators.TITLE_MR)
         
-        # BỎ ĐIỀU KIỆN IF: Luôn luôn fill. Nếu data trống, nó sẽ gõ chuỗi rỗng để clear field.
+        # If account name is empty, it will type an empty string to clear the field.
         self.fill(RegisterLocators.ACCOUNT_NAME, data.get("AccountName"))
             
         email_locator = self.page.locator(RegisterLocators.ACCOUNT_EMAIL)
@@ -43,7 +41,7 @@ class RegisterPage(BasePage):
             expect(email_locator).to_have_value(str(expected_email))
             expect(email_locator).to_be_disabled()
                 
-        # Các field còn lại giữ nguyên
+        # Other fields
         self.fill(RegisterLocators.PASSWORD, data.get("Password"))
         self.fill(RegisterLocators.FIRST_NAME, data.get("FirstName"))
         self.fill(RegisterLocators.LAST_NAME, data.get("LastName"))
@@ -65,7 +63,7 @@ class RegisterPage(BasePage):
         expect(locator).to_contain_text(expected_name)
 
     def delete_account(self):
-        """Dọn dẹp tài khoản sau khi test thành công"""
+        """Clean up the account after successful testing"""
         self.click(RegisterLocators.DELETE_ACCOUNT_BTN)
         expect(self.page.locator(RegisterLocators.ACCOUNT_DELETED_MSG)).to_be_visible(timeout=5000)
         self.click(RegisterLocators.CONTINUE_BTN)

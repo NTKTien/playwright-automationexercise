@@ -16,21 +16,21 @@ def test_search_flow(driver_setup, request, case):
     page = driver_setup["page"]
     search_page = SearchPage(page)
     
-    # Lấy dữ liệu
+    # Get test data from the Excel file
     search_keyword = case.get("SearchKeyword")
     expected_header = str(case.get("Expected Header", "Searched Products")).strip()
     product_found = str(case.get("ProductFound", "N")).strip().upper()
     is_found_expected = (product_found == "Y")
     
-    # Thực thi
+    # Execute the search
     search_page.navigate("/")
     search_page.navigate_to_products()
     search_page.search_for(search_keyword)
     
-    # Xác minh
+    # Verify the results
     try:
-        # TRUYỀN THÊM TỪ KHÓA VÀO ĐỂ SO KHỚP TÊN SẢN PHẨM
+        # Pass the search keyword to match product names
         search_page.verify_products_found(is_found_expected, expected_header, str(search_keyword or ""))
-        logger.info(f"Test Pass: Hiển thị '{expected_header}' và kết quả đúng (ProductFound={product_found}).")
+        logger.info(f"Test Pass: Displaying '{expected_header}' and correct results (ProductFound={product_found}).")
     except AssertionError as e:
-        pytest.fail(f"Lỗi kiểm tra kết quả: {str(e)}")
+        pytest.fail(f"Error verifying results: {str(e)}")
