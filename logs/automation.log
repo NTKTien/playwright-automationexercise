@@ -701,3 +701,117 @@
 2026-08-16 10:14:17,499 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
 2026-08-16 10:14:25,948 - test_login - INFO - --- Bắt đầu test: Login-TC11 ---
 2026-08-16 10:14:27,053 - test_login - INFO - Bắt được lỗi login: 'Please include an '@' in the email address. '<script>alert('XSS')</script>' is missing an '@'.'
+2026-08-16 10:36:11,053 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:36:12,749 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:36:14,679 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:36:17,608 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:36:20,441 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:36:23,357 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:36:25,862 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:36:27,460 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:36:29,658 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:36:31,506 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:36:39,861 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:36:42,309 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:39:47,430 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:39:50,250 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:39:52,106 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:39:54,122 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:39:55,566 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:40:04,150 - test_search - INFO - --- Bắt đầu test: Search-TC004 ---
+2026-08-16 10:40:06,398 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:40:08,383 - test_search - INFO - --- Bắt đầu test: Search-TC005 ---
+2026-08-16 10:40:11,414 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:40:13,292 - test_search - INFO - --- Bắt đầu test: Search-TC006 ---
+2026-08-16 10:40:15,852 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:40:17,850 - test_search - INFO - --- Bắt đầu test: Search-TC007 ---
+2026-08-16 10:40:28,065 - test_search - INFO - --- Bắt đầu test: Search-TC008 ---
+2026-08-16 10:40:30,898 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:40:32,815 - test_search - INFO - --- Bắt đầu test: Search-TC009 ---
+2026-08-16 10:40:35,406 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:40:38,573 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:40:41,564 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:40:44,455 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:40:45,747 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:40:48,835 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:41:00,746 - test_search - INFO - --- Bắt đầu test: Search-TC004 ---
+2026-08-16 10:41:04,188 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:41:07,691 - test_search - INFO - --- Bắt đầu test: Search-TC005 ---
+2026-08-16 10:41:11,846 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:41:15,456 - test_search - INFO - --- Bắt đầu test: Search-TC006 ---
+2026-08-16 10:41:18,443 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:41:22,302 - test_search - INFO - --- Bắt đầu test: Search-TC007 ---
+2026-08-16 10:41:35,273 - test_search - INFO - --- Bắt đầu test: Search-TC008 ---
+2026-08-16 10:41:39,373 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:41:42,704 - test_search - INFO - --- Bắt đầu test: Search-TC009 ---
+2026-08-16 10:41:46,243 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:41:48,879 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:41:51,226 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:41:53,614 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:41:55,491 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:41:57,924 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:42:07,342 - test_search - INFO - --- Bắt đầu test: Search-TC004 ---
+2026-08-16 10:42:09,954 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:42:12,213 - test_search - INFO - --- Bắt đầu test: Search-TC005 ---
+2026-08-16 10:42:16,296 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:42:18,796 - test_search - INFO - --- Bắt đầu test: Search-TC006 ---
+2026-08-16 10:42:21,869 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=Y).
+2026-08-16 10:42:24,288 - test_search - INFO - --- Bắt đầu test: Search-TC007 ---
+2026-08-16 10:42:36,670 - test_search - INFO - --- Bắt đầu test: Search-TC008 ---
+2026-08-16 10:42:40,521 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:42:42,857 - test_search - INFO - --- Bắt đầu test: Search-TC009 ---
+2026-08-16 10:42:46,333 - test_search - INFO - Test Pass: Kết quả hiển thị đúng kỳ vọng (ProductFound=N).
+2026-08-16 10:46:05,186 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:46:08,611 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:46:10,179 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:46:11,567 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:46:13,732 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:46:23,846 - test_search - INFO - --- Bắt đầu test: Search-TC004 ---
+2026-08-16 10:46:28,656 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:46:32,741 - test_search - INFO - --- Bắt đầu test: Search-TC005 ---
+2026-08-16 10:46:35,695 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:46:37,894 - test_search - INFO - --- Bắt đầu test: Search-TC006 ---
+2026-08-16 10:46:40,854 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:46:42,828 - test_search - INFO - --- Bắt đầu test: Search-TC007 ---
+2026-08-16 10:46:45,038 - test_search - INFO - Test Pass: Hiển thị 'All Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:46:47,258 - test_search - INFO - --- Bắt đầu test: Search-TC008 ---
+2026-08-16 10:46:50,589 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:46:52,393 - test_search - INFO - --- Bắt đầu test: Search-TC009 ---
+2026-08-16 10:46:55,615 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:46:59,061 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:47:02,358 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:47:05,394 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:47:06,793 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:47:10,288 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:47:22,845 - test_search - INFO - --- Bắt đầu test: Search-TC004 ---
+2026-08-16 10:47:26,024 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:47:29,556 - test_search - INFO - --- Bắt đầu test: Search-TC005 ---
+2026-08-16 10:47:33,202 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:47:36,686 - test_search - INFO - --- Bắt đầu test: Search-TC006 ---
+2026-08-16 10:47:40,080 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:47:43,487 - test_search - INFO - --- Bắt đầu test: Search-TC007 ---
+2026-08-16 10:47:45,822 - test_search - INFO - Test Pass: Hiển thị 'All Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:47:49,531 - test_search - INFO - --- Bắt đầu test: Search-TC008 ---
+2026-08-16 10:47:53,485 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:47:57,260 - test_search - INFO - --- Bắt đầu test: Search-TC009 ---
+2026-08-16 10:48:01,498 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:48:03,860 - test_search - INFO - --- Bắt đầu test: Search-TC001 ---
+2026-08-16 10:48:06,204 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:48:08,401 - test_search - INFO - --- Bắt đầu test: Search-TC002 ---
+2026-08-16 10:48:11,083 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:48:19,333 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:48:28,821 - test_search - INFO - --- Bắt đầu test: Search-TC004 ---
+2026-08-16 10:48:30,845 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:48:38,707 - test_search - INFO - --- Bắt đầu test: Search-TC005 ---
+2026-08-16 10:48:43,499 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:48:45,937 - test_search - INFO - --- Bắt đầu test: Search-TC006 ---
+2026-08-16 10:48:47,914 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:48:50,295 - test_search - INFO - --- Bắt đầu test: Search-TC007 ---
+2026-08-16 10:48:52,944 - test_search - INFO - Test Pass: Hiển thị 'All Products' và kết quả đúng (ProductFound=Y).
+2026-08-16 10:48:59,264 - test_search - INFO - --- Bắt đầu test: Search-TC008 ---
+2026-08-16 10:49:02,226 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:49:10,242 - test_search - INFO - --- Bắt đầu test: Search-TC009 ---
+2026-08-16 10:49:14,697 - test_search - INFO - Test Pass: Hiển thị 'Searched Products' và kết quả đúng (ProductFound=N).
+2026-08-16 10:54:11,656 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:54:20,816 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
+2026-08-16 10:54:28,162 - test_search - INFO - --- Bắt đầu test: Search-TC003 ---
