@@ -623,3 +623,81 @@
 2026-08-15 23:28:17,340 - test_register - INFO - Bắt được lỗi ở bước 1: 'A part followed by '@' should not contain the symbol '🤣'.'
 2026-08-15 23:28:19,443 - test_register - INFO - --- Bắt đầu test: Register-TC004 ---
 2026-08-15 23:28:20,438 - test_register - INFO - Bắt được lỗi ở bước 1: 'Please include an '@' in the email address. 'nutest.com' is missing an '@'.'
+2026-08-16 10:06:37,458 - test_login - INFO - Running Test: Login-TC01 on chrome
+2026-08-16 10:06:45,686 - test_login - INFO - Running Test: Login-TC02 on chrome
+2026-08-16 10:06:55,559 - test_login - INFO - Running Test: Login-TC01 on firefox
+2026-08-16 10:07:05,480 - test_login - INFO - Running Test: Login-TC02 on firefox
+2026-08-16 10:07:14,375 - test_login - INFO - Running Test: Login-TC01 on edge
+2026-08-16 10:07:22,724 - test_login - INFO - Running Test: Login-TC02 on edge
+2026-08-16 10:10:35,550 - test_login - INFO - --- Bắt đầu test: Login-TC01 ---
+2026-08-16 10:10:37,370 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:10:39,599 - test_login - INFO - --- Bắt đầu test: Login-TC02 ---
+2026-08-16 10:10:41,591 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:10:45,078 - test_login - INFO - --- Bắt đầu test: Login-TC01 ---
+2026-08-16 10:10:47,112 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:10:50,601 - test_login - INFO - --- Bắt đầu test: Login-TC02 ---
+2026-08-16 10:10:52,269 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:10:54,689 - test_login - INFO - --- Bắt đầu test: Login-TC01 ---
+2026-08-16 10:10:56,497 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:11:04,773 - test_login - INFO - --- Bắt đầu test: Login-TC02 ---
+2026-08-16 10:11:06,428 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:12:11,918 - test_login - INFO - --- Bắt đầu test: Login-TC01 ---
+2026-08-16 10:12:13,695 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:12:15,634 - test_login - INFO - --- Bắt đầu test: Login-TC02 ---
+2026-08-16 10:12:17,464 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:12:19,444 - test_login - INFO - --- Bắt đầu test: Login-TC03 ---
+2026-08-16 10:12:20,879 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:12:22,974 - test_login - INFO - --- Bắt đầu test: Login-TC04 ---
+2026-08-16 10:12:23,922 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:12:27,935 - test_login - INFO - --- Bắt đầu test: Login-TC05 ---
+2026-08-16 10:12:29,196 - test_login - INFO - Bắt được lỗi login: 'Please fill out this field.'
+2026-08-16 10:12:31,600 - test_login - INFO - --- Bắt đầu test: Login-TC06 ---
+2026-08-16 10:12:32,276 - test_login - INFO - Bắt được lỗi login: 'Please fill out this field.'
+2026-08-16 10:12:34,065 - test_login - INFO - --- Bắt đầu test: Login-TC07 ---
+2026-08-16 10:12:35,277 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:12:36,896 - test_login - INFO - --- Bắt đầu test: Login-TC09 ---
+2026-08-16 10:12:38,019 - test_login - INFO - Bắt được lỗi login: 'Please include an '@' in the email address. 'admin' OR '1'='1' is missing an '@'.'
+2026-08-16 10:12:39,864 - test_login - INFO - --- Bắt đầu test: Login-TC10 ---
+2026-08-16 10:12:41,133 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:12:43,657 - test_login - INFO - --- Bắt đầu test: Login-TC11 ---
+2026-08-16 10:12:44,598 - test_login - INFO - Bắt được lỗi login: 'Please include an '@' in the email address. '<script>alert('XSS')</script>' is missing an '@'.'
+2026-08-16 10:12:48,376 - test_login - INFO - --- Bắt đầu test: Login-TC01 ---
+2026-08-16 10:12:50,701 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:12:54,122 - test_login - INFO - --- Bắt đầu test: Login-TC02 ---
+2026-08-16 10:12:56,676 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:13:00,405 - test_login - INFO - --- Bắt đầu test: Login-TC03 ---
+2026-08-16 10:13:02,793 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:13:06,460 - test_login - INFO - --- Bắt đầu test: Login-TC04 ---
+2026-08-16 10:13:08,031 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:13:11,747 - test_login - INFO - --- Bắt đầu test: Login-TC05 ---
+2026-08-16 10:13:12,991 - test_login - INFO - Bắt được lỗi login: 'Please fill out this field.'
+2026-08-16 10:13:16,601 - test_login - INFO - --- Bắt đầu test: Login-TC06 ---
+2026-08-16 10:13:17,803 - test_login - INFO - Bắt được lỗi login: 'Please fill out this field.'
+2026-08-16 10:13:21,326 - test_login - INFO - --- Bắt đầu test: Login-TC07 ---
+2026-08-16 10:13:23,125 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:13:26,557 - test_login - INFO - --- Bắt đầu test: Login-TC09 ---
+2026-08-16 10:13:27,912 - test_login - INFO - Bắt được lỗi login: 'Please enter an email address.'
+2026-08-16 10:13:31,400 - test_login - INFO - --- Bắt đầu test: Login-TC10 ---
+2026-08-16 10:13:33,108 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:13:36,598 - test_login - INFO - --- Bắt đầu test: Login-TC11 ---
+2026-08-16 10:13:37,969 - test_login - INFO - Bắt được lỗi login: 'Please enter an email address.'
+2026-08-16 10:13:40,675 - test_login - INFO - --- Bắt đầu test: Login-TC01 ---
+2026-08-16 10:13:42,398 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:13:44,779 - test_login - INFO - --- Bắt đầu test: Login-TC02 ---
+2026-08-16 10:13:46,563 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:13:48,796 - test_login - INFO - --- Bắt đầu test: Login-TC03 ---
+2026-08-16 10:13:50,645 - test_login - INFO - Đăng nhập thành công, đã tìm thấy Logged in as trên header.
+2026-08-16 10:13:53,027 - test_login - INFO - --- Bắt đầu test: Login-TC04 ---
+2026-08-16 10:13:54,332 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:13:56,779 - test_login - INFO - --- Bắt đầu test: Login-TC05 ---
+2026-08-16 10:13:57,705 - test_login - INFO - Bắt được lỗi login: 'Please fill out this field.'
+2026-08-16 10:14:06,237 - test_login - INFO - --- Bắt đầu test: Login-TC06 ---
+2026-08-16 10:14:07,253 - test_login - INFO - Bắt được lỗi login: 'Please fill out this field.'
+2026-08-16 10:14:09,419 - test_login - INFO - --- Bắt đầu test: Login-TC07 ---
+2026-08-16 10:14:10,782 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:14:12,955 - test_login - INFO - --- Bắt đầu test: Login-TC09 ---
+2026-08-16 10:14:13,965 - test_login - INFO - Bắt được lỗi login: 'Please include an '@' in the email address. 'admin' OR '1'='1' is missing an '@'.'
+2026-08-16 10:14:16,167 - test_login - INFO - --- Bắt đầu test: Login-TC10 ---
+2026-08-16 10:14:17,499 - test_login - INFO - Bắt được lỗi login: 'Your email or password is incorrect!'
+2026-08-16 10:14:25,948 - test_login - INFO - --- Bắt đầu test: Login-TC11 ---
+2026-08-16 10:14:27,053 - test_login - INFO - Bắt được lỗi login: 'Please include an '@' in the email address. '<script>alert('XSS')</script>' is missing an '@'.'
