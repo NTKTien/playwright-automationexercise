@@ -1,12 +1,13 @@
 from playwright.sync_api import Page, expect
 from pages.base_page import BasePage
 from locators.search_locators import SearchLocators
+from config.config import TIMEOUT_STANDARD, WAIT_NO_RESULT
 
 class SearchPage(BasePage):
     def navigate_to_products(self):
         """Navigate to the Products page and wait for the search input to appear"""
         self.click(SearchLocators.PRODUCTS_LINK)
-        expect(self.page.locator(SearchLocators.SEARCH_INPUT)).to_be_visible(timeout=5000)
+        expect(self.page.locator(SearchLocators.SEARCH_INPUT)).to_be_visible(timeout=TIMEOUT_STANDARD)
 
     def search_for(self, keyword):
         """Perform a search with a clear operation before filling"""
@@ -21,7 +22,7 @@ class SearchPage(BasePage):
         """
         # 1. Verify Header
         header_locator = self.page.locator(f"text={expected_header}")
-        expect(header_locator).to_be_visible(timeout=5000)
+        expect(header_locator).to_be_visible(timeout=TIMEOUT_STANDARD)
         
         product_list = self.page.locator(SearchLocators.PRODUCT_NAMES)
         
@@ -29,7 +30,7 @@ class SearchPage(BasePage):
             # === EXPECTED: FOUND PRODUCTS ===
             try:
                 # Wait for at least 1 product to be visible
-                expect(product_list.first).to_be_visible(timeout=3000)
+                expect(product_list.first).to_be_visible(timeout=TIMEOUT_STANDARD)
             except AssertionError:
                 # Throw an error with a clear message for the test to report Fail correctly
                 raise AssertionError(f"System did not return any products for the keyword '{keyword}'.")
@@ -58,7 +59,7 @@ class SearchPage(BasePage):
                     
         else:
             # === EXPECTED: NOT FOUND ANY PRODUCTS ===
-            self.page.wait_for_timeout(1000) 
+            self.page.wait_for_timeout(WAIT_NO_RESULT)
             count = product_list.count()
             if count > 0:
                 raise AssertionError(f"Expected NO products, but {count} products were displayed.")

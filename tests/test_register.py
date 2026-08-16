@@ -5,6 +5,7 @@ from locators.register_locators import RegisterLocators
 from utils.excel_utils import load_excel_data
 from config.config import DATA_FILE
 from utils.logger import get_logger
+from config.config import TIMEOUT_ELEMENT_CHECK
 
 logger = get_logger(__name__)
 register_cases = load_excel_data(DATA_FILE, "RegisterData")
@@ -60,7 +61,7 @@ def test_register_flow(driver_setup, request, case):
     # =======================================================
     # STEP 3: CONFIRM RESULT & ALWAYS CLEAN UP (TEARDOWN)
     # =======================================================
-    is_created = page.locator(RegisterLocators.ACCOUNT_CREATED_MSG).is_visible(timeout=3000)
+    is_created = page.locator(RegisterLocators.ACCOUNT_CREATED_MSG).is_visible(timeout=TIMEOUT_ELEMENT_CHECK)
 
     if is_created:
         # Press Continue to go to the home page
